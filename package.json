@@ -1,0 +1,61 @@
+{
+  "name": "girp-backend-socview",
+  "version": "1.0.0",
+  "description": "Guided Incident Response Platform - Central management API for GIRP. Orchestrates the incident lifecycle, manages analyst workflows, and serves as the primary data hub for security operations.",
+  "private": true,
+  "type": "module",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "BavariaByte",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BavariaByte/backend-socview.git"
+  },
+  "homepage": "https://girp.bavariabyte.com",
+  "bugs": {
+    "email": "security@bavariabyte.com"
+  },
+  "engines": {
+    "node": ">=22.16"
+  },
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js && npm run test:routes",
+    "test:routes": "node --experimental-test-module-mocks --test tests/routes/*.test.js",
+    "sbom": "npx @cyclonedx/cyclonedx-npm --output-file sbom.json --output-format JSON",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "soc",
+    "security",
+    "playbooks",
+    "incident-response",
+    "girp"
+  ],
+  "dependencies": {
+    "@girp/database-models": "2.1.0",
+    "better-auth": "^1.4.17",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "csrf-csrf": "^4.0.3",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "fast-json-patch": "^3.1.1",
+    "helmet": "^8.1.0",
+    "jose": "^6.1.0",
+    "mongoose": "^8.18.1",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.0",
+    "nodemailer": "^9.0.3",
+    "pino": "^9.10.0",
+    "pino-pretty": "^13.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.58.2",
+    "eslint": "^10.6.0",
+    "globals": "^17.7.0",
+    "supertest": "^7.2.2"
+  }
+}
