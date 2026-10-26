@@ -1,0 +1,30 @@
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.git
+.gitignore
+.gitlab-ci.yml
+.env
+.env.*
+!.env.example
+
+# macOS metadata
+**/.DS_Store
+
+# Documentation & audit artifacts
+docs/
+*.md
+Findings.txt
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Runtime upload directory (volume-mounted in production)
+uploads/
+
+# Generated artifacts
+dist/
+coverage/
+sbom.json
